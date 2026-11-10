@@ -1,0 +1,41 @@
+[
+  {
+    "patient_id": "P001",
+    "type": "audio",
+    "file": "audio/consulta_P001.wav",
+    "timestamp": "2026-11-09T09:00:00"
+  },
+  {
+    "patient_id": "P002",
+    "type": "audio",
+    "file": "audio/consulta_P002.wav",
+    "timestamp": "2026-11-09T09:30:00"
+  },
+  {
+    "patient_id": "P003",
+    "type": "audio",
+    "file": "audio/consulta_P003.wav",
+    "timestamp": "2026-11-09T10:00:00"
+  },
+  {
+    "patient_id": "P001",
+    "type": "physio",
+    "file": "video/fisio_P001.mp4",
+    "openpose_json": "video/fisio_P001_openpose",
+    "timestamp": "2026-11-09T11:00:00",
+    "reference": true
+  },
+  {
+    "patient_id": "P003",
+    "type": "physio",
+    "file": "video/fisio_P003.mp4",
+    "openpose_json": "video/fisio_P003_openpose",
+    "timestamp": "2026-11-09T14:58:00"
+  },
+  {
+    "patient_id": "LEITO-07",
+    "type": "scene",
+    "file": "video/sala_real_yolo.mp4",
+    "timestamp": "2026-11-09T12:00:00"
+  }
+]

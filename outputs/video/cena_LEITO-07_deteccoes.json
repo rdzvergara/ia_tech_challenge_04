@@ -1,0 +1,31 @@
+{
+  "classes_detectadas": {
+    "person": 154,
+    "tie": 20,
+    "bus": 30
+  },
+  "eventos": [
+    {
+      "t": 0.1,
+      "type": "zona_critica",
+      "detail": "pessoa dentro da zona 'campo_esteril'"
+    }
+  ],
+  "pessoas_com_pose_media": 2.72,
+  "findings": [
+    {
+      "patient_id": "LEITO-07",
+      "modality": "video",
+      "kind": "critical_zone_intrusion",
+      "score": 0.6,
+      "description": "Presença na zona crítica 'campo_esteril' em 77% dos quadros analisados",
+      "timestamp": "2026-11-10T16:05:08+00:00",
+      "evidence": {
+        "zona": "campo_esteril",
+        "quadros": 46
+      },
+      "source": "YOLOv8",
+      "severity": "HIGH"
+    }
+  ]
+}

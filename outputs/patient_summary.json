@@ -1,0 +1,31 @@
+{
+  "P001": {
+    "risk": 0.0,
+    "severity": "INFO",
+    "modalities": {},
+    "n_findings": 0
+  },
+  "P002": {
+    "risk": 1.0,
+    "severity": "CRITICAL",
+    "modalities": {
+      "audio": 0.9,
+      "vitals": 1.0,
+      "prescriptions": 1.0,
+      "mobility": 0.65
+    },
+    "n_findings": 321
+  },
+  "P003": {
+    "risk": 1.0,
+    "severity": "CRITICAL",
+    "modalities": {
+      "audio": 0.9,
+      "video": 1.0,
+      "vitals": 1.0,
+      "prescriptions": 0.957,
+      "mobility": 0.9
+    },
+    "n_findings": 23
+  }
+}

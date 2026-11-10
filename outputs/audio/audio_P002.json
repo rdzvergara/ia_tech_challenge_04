@@ -1,0 +1,197 @@
+{
+  "patient_id": "P002",
+  "file": "/home/claude/tech-challenge-fase4/data/audio/consulta_P002.wav",
+  "features": {
+    "duration_s": 26.654,
+    "speech_time_s": 17.61,
+    "speech_rate_sps": 2.563,
+    "articulation_rate_sps": 3.578,
+    "pause_ratio": 0.284,
+    "long_pauses": 3,
+    "f0_mean_hz": 88.829,
+    "f0_std_st": 1.897,
+    "jitter_pct": 0.288,
+    "shimmer_pct": 10.782,
+    "hnr_db": 3.81,
+    "hf_energy_ratio": 0.153,
+    "breath_events_per_min": 9.004
+  },
+  "transcript": {
+    "text": "Doutor, eu estou com muita falta de ar. Sinto um cansaço enorme, não consigo nem levantar da cama. Tive febre de madrugada e uma dor no peito quando respiro fundo. Estou ficando com tontura.",
+    "engine": "transcricao-referencia (offline)",
+    "language": "pt-BR",
+    "segments": []
+  },
+  "insights": {
+    "engine": "lexico-offline",
+    "sentiment": "negative",
+    "sentiment_scores": {
+      "positive": 0.0,
+      "negative": 0.89,
+      "neutral": 0.11
+    },
+    "key_phrases": [
+      "dor no peito",
+      "falta de ar",
+      "cansaco",
+      "tontura",
+      "febre"
+    ],
+    "health_entities": [
+      {
+        "text": "dor no peito",
+        "category": "SymptomOrSign",
+        "negated": false
+      },
+      {
+        "text": "falta de ar",
+        "category": "SymptomOrSign",
+        "negated": false
+      },
+      {
+        "text": "cansaco",
+        "category": "SymptomOrSign",
+        "negated": false
+      },
+      {
+        "text": "tontura",
+        "category": "SymptomOrSign",
+        "negated": false
+      },
+      {
+        "text": "febre",
+        "category": "SymptomOrSign",
+        "negated": false
+      }
+    ],
+    "critical_terms": [
+      "falta de ar",
+      "dor no peito",
+      "tontura",
+      "cansaço"
+    ]
+  },
+  "marker_flags": {
+    "fadiga": {
+      "fala_lenta": 0.19904393809890533,
+      "pausas_excessivas": 0.13425549173311646
+    },
+    "disartria": {
+      "jitter_elevado": 0.0,
+      "shimmer_elevado": 0.0,
+      "hnr_baixo": 0.0,
+      "articulacao_imprecisa": 0.0
+    },
+    "respiratorio": {
+      "respiracao_audivel": 0.5007233954908191
+    }
+  },
+  "findings": [
+    {
+      "patient_id": "P002",
+      "modality": "audio",
+      "kind": "voice_fadiga",
+      "score": 0.5995219690494527,
+      "description": "Sinais vocais de fadiga (fala lentificada / pausas longas)",
+      "timestamp": "2026-11-10T16:04:50+00:00",
+      "evidence": {
+        "marcadores": {
+          "fala_lenta": 0.2,
+          "pausas_excessivas": 0.13
+        },
+        "speech_time_s": 17.61,
+        "speech_rate_sps": 2.563,
+        "articulation_rate_sps": 3.578,
+        "pause_ratio": 0.284,
+        "long_pauses": 3,
+        "f0_mean_hz": 88.829,
+        "f0_std_st": 1.897,
+        "jitter_pct": 0.288,
+        "shimmer_pct": 10.782,
+        "hnr_db": 3.81,
+        "hf_energy_ratio": 0.153,
+        "breath_events_per_min": 9.004
+      },
+      "source": "biomarcadores acústicos (librosa/pYIN)",
+      "severity": "HIGH"
+    },
+    {
+      "patient_id": "P002",
+      "modality": "audio",
+      "kind": "voice_respiratorio",
+      "score": 0.7503616977454095,
+      "description": "Dificuldade respiratória audível (inspirações frequentes entre frases)",
+      "timestamp": "2026-11-10T16:04:50+00:00",
+      "evidence": {
+        "marcadores": {
+          "respiracao_audivel": 0.5
+        },
+        "speech_time_s": 17.61,
+        "speech_rate_sps": 2.563,
+        "articulation_rate_sps": 3.578,
+        "pause_ratio": 0.284,
+        "long_pauses": 3,
+        "f0_mean_hz": 88.829,
+        "f0_std_st": 1.897,
+        "jitter_pct": 0.288,
+        "shimmer_pct": 10.782,
+        "hnr_db": 3.81,
+        "hf_energy_ratio": 0.153,
+        "breath_events_per_min": 9.004
+      },
+      "source": "biomarcadores acústicos (librosa/pYIN)",
+      "severity": "CRITICAL"
+    },
+    {
+      "patient_id": "P002",
+      "modality": "audio",
+      "kind": "critical_terms",
+      "score": 0.8,
+      "description": "Termos clínicos críticos na fala: falta de ar, dor no peito, tontura, cansaço",
+      "timestamp": "2026-11-10T16:04:50+00:00",
+      "evidence": {
+        "termos": [
+          "falta de ar",
+          "dor no peito",
+          "tontura",
+          "cansaço"
+        ],
+        "sentimento": "negative",
+        "sentiment_scores": {
+          "positive": 0.0,
+          "negative": 0.89,
+          "neutral": 0.11
+        },
+        "entidades_saude": [
+          {
+            "text": "dor no peito",
+            "category": "SymptomOrSign",
+            "negated": false
+          },
+          {
+            "text": "falta de ar",
+            "category": "SymptomOrSign",
+            "negated": false
+          },
+          {
+            "text": "cansaco",
+            "category": "SymptomOrSign",
+            "negated": false
+          },
+          {
+            "text": "tontura",
+            "category": "SymptomOrSign",
+            "negated": false
+          },
+          {
+            "text": "febre",
+            "category": "SymptomOrSign",
+            "negated": false
+          }
+        ]
+      },
+      "source": "transcricao-referencia (offline) + lexico-offline",
+      "severity": "CRITICAL"
+    }
+  ]
+}

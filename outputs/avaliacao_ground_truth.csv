@@ -1,0 +1,17 @@
+paciente,modalidade,evento,esperado_alerta,detectado,correto,latencia_min,achados
+P001,vitals,artefato_sensor_spo2,False,False,True,,0
+P002,vitals,deterioracao_septica,True,True,True,110.0,312
+P003,vitals,crise_hipertensiva,True,True,True,2.0,5
+P003,vitals,bradicardia,True,True,True,2.0,2
+P002,prescriptions,dose_10x_enoxaparina,True,True,True,,2
+P002,prescriptions,morfina_aumento_2.5x,True,True,True,,1
+P003,prescriptions,insulina_acima_limite,True,True,True,,1
+P003,prescriptions,suspensao_abrupta_betabloqueador,True,True,True,,1
+P002,mobility,hipoatividade_letargia,True,True,True,120.0,2
+P002,mobility,agitacao_noturna,True,True,True,31.0,1
+P003,mobility,queda,True,True,True,0.0,1
+P001,video,sessao_normal,False,False,True,,0
+P003,video,rom_reduzida_esquerda+assimetria+compensacao_tronco+tremor+queda,True,True,True,,6
+P001,audio,fala_normal,False,False,True,,0
+P002,audio,fadiga+dificuldade_respiratoria+termos_criticos,True,True,True,,3
+P003,audio,disartria+termos_criticos,True,True,True,,2

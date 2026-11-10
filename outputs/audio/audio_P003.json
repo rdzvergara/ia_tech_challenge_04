@@ -1,0 +1,198 @@
+{
+  "patient_id": "P003",
+  "file": "/home/claude/tech-challenge-fase4/data/audio/consulta_P003.wav",
+  "features": {
+    "duration_s": 20.068,
+    "speech_time_s": 12.26,
+    "speech_rate_sps": 2.854,
+    "articulation_rate_sps": 3.997,
+    "pause_ratio": 0.286,
+    "long_pauses": 3,
+    "f0_mean_hz": 93.247,
+    "f0_std_st": 1.59,
+    "jitter_pct": 0.504,
+    "shimmer_pct": 22.315,
+    "hnr_db": 0.712,
+    "hf_energy_ratio": 0.14,
+    "breath_events_per_min": 2.99
+  },
+  "transcript": {
+    "text": "Doutora, o meu braço esquerdo continua fraco e com formigamento. Minha família disse que estou com a fala enrolada desde ontem. Às vezes sinto confusão para encontrar as palavras.",
+    "engine": "transcricao-referencia (offline)",
+    "language": "pt-BR",
+    "segments": []
+  },
+  "insights": {
+    "engine": "lexico-offline",
+    "sentiment": "negative",
+    "sentiment_scores": {
+      "positive": 0.0,
+      "negative": 0.8,
+      "neutral": 0.2
+    },
+    "key_phrases": [
+      "fala enrolada",
+      "formigamento",
+      "confusao",
+      "fraco",
+      "braco esquerdo"
+    ],
+    "health_entities": [
+      {
+        "text": "fala enrolada",
+        "category": "SymptomOrSign",
+        "negated": false
+      },
+      {
+        "text": "formigamento",
+        "category": "SymptomOrSign",
+        "negated": false
+      },
+      {
+        "text": "confusao",
+        "category": "SymptomOrSign",
+        "negated": false
+      },
+      {
+        "text": "fraco",
+        "category": "SymptomOrSign",
+        "negated": false
+      },
+      {
+        "text": "braco esquerdo",
+        "category": "BodyStructure",
+        "negated": false
+      }
+    ],
+    "critical_terms": [
+      "confusão",
+      "fala enrolada",
+      "formigamento"
+    ]
+  },
+  "marker_flags": {
+    "fadiga": {
+      "fala_lenta": 0.10818287707743357,
+      "pausas_excessivas": 0.14385556145136846
+    },
+    "disartria": {
+      "jitter_elevado": 0.11991754503613998,
+      "shimmer_elevado": 0.2397409053652725,
+      "hnr_baixo": 0.6441079138419079,
+      "articulacao_imprecisa": 0.0361645301429402
+    },
+    "respiratorio": {
+      "respiracao_audivel": 0.0
+    }
+  },
+  "findings": [
+    {
+      "patient_id": "P003",
+      "modality": "audio",
+      "kind": "voice_fadiga",
+      "score": 0.5719277807256842,
+      "description": "Sinais vocais de fadiga (fala lentificada / pausas longas)",
+      "timestamp": "2026-11-10T16:04:51+00:00",
+      "evidence": {
+        "marcadores": {
+          "fala_lenta": 0.11,
+          "pausas_excessivas": 0.14
+        },
+        "speech_time_s": 12.26,
+        "speech_rate_sps": 2.854,
+        "articulation_rate_sps": 3.997,
+        "pause_ratio": 0.286,
+        "long_pauses": 3,
+        "f0_mean_hz": 93.247,
+        "f0_std_st": 1.59,
+        "jitter_pct": 0.504,
+        "shimmer_pct": 22.315,
+        "hnr_db": 0.712,
+        "hf_energy_ratio": 0.14,
+        "breath_events_per_min": 2.99
+      },
+      "source": "biomarcadores acústicos (librosa/pYIN)",
+      "severity": "HIGH"
+    },
+    {
+      "patient_id": "P003",
+      "modality": "audio",
+      "kind": "voice_disartria",
+      "score": 0.8,
+      "description": "Sinais vocais compatíveis com disartria (instabilidade fonatória / articulação imprecisa)",
+      "timestamp": "2026-11-10T16:04:51+00:00",
+      "evidence": {
+        "marcadores": {
+          "jitter_elevado": 0.12,
+          "shimmer_elevado": 0.24,
+          "hnr_baixo": 0.64,
+          "articulacao_imprecisa": 0.04
+        },
+        "speech_time_s": 12.26,
+        "speech_rate_sps": 2.854,
+        "articulation_rate_sps": 3.997,
+        "pause_ratio": 0.286,
+        "long_pauses": 3,
+        "f0_mean_hz": 93.247,
+        "f0_std_st": 1.59,
+        "jitter_pct": 0.504,
+        "shimmer_pct": 22.315,
+        "hnr_db": 0.712,
+        "hf_energy_ratio": 0.14,
+        "breath_events_per_min": 2.99
+      },
+      "source": "biomarcadores acústicos (librosa/pYIN)",
+      "severity": "CRITICAL"
+    },
+    {
+      "patient_id": "P003",
+      "modality": "audio",
+      "kind": "critical_terms",
+      "score": 0.7599999999999999,
+      "description": "Termos clínicos críticos na fala: confusão, fala enrolada, formigamento",
+      "timestamp": "2026-11-10T16:04:51+00:00",
+      "evidence": {
+        "termos": [
+          "confusão",
+          "fala enrolada",
+          "formigamento"
+        ],
+        "sentimento": "negative",
+        "sentiment_scores": {
+          "positive": 0.0,
+          "negative": 0.8,
+          "neutral": 0.2
+        },
+        "entidades_saude": [
+          {
+            "text": "fala enrolada",
+            "category": "SymptomOrSign",
+            "negated": false
+          },
+          {
+            "text": "formigamento",
+            "category": "SymptomOrSign",
+            "negated": false
+          },
+          {
+            "text": "confusao",
+            "category": "SymptomOrSign",
+            "negated": false
+          },
+          {
+            "text": "fraco",
+            "category": "SymptomOrSign",
+            "negated": false
+          },
+          {
+            "text": "braco esquerdo",
+            "category": "BodyStructure",
+            "negated": false
+          }
+        ]
+      },
+      "source": "transcricao-referencia (offline) + lexico-offline",
+      "severity": "CRITICAL"
+    }
+  ]
+}

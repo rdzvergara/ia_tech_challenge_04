@@ -1,0 +1,17 @@
+timestamp,patient_id,drug,dose,unit,doses_per_day,route,prescriber
+2026-11-08 08:00:00,P001,dipirona,1000,mg,4,IV,Dr. Silva
+2026-11-08 08:00:00,P001,enoxaparina,40,mg,1,SC,Dr. Silva
+2026-11-08 08:00:00,P001,paracetamol,750,mg,3,VO,Dr. Silva
+2026-11-09 08:00:00,P001,dipirona,1000,mg,4,IV,Dr. Silva
+2026-11-09 08:00:00,P001,enoxaparina,40,mg,1,SC,Dr. Silva
+2026-11-09 08:00:00,P001,paracetamol,750,mg,3,VO,Dr. Silva
+2026-11-08 08:00:00,P002,enoxaparina,40,mg,1,SC,Dr. Silva
+2026-11-08 08:00:00,P002,dipirona,1000,mg,4,IV,Dr. Silva
+2026-11-08 08:00:00,P002,morfina,4,mg,6,IV,Dr. Silva
+2026-11-09 08:00:00,P002,enoxaparina,400,mg,1,SC,Dr. Costa
+2026-11-09 08:00:00,P002,dipirona,1000,mg,4,IV,Dr. Silva
+2026-11-09 08:00:00,P002,morfina,10,mg,6,IV,Dr. Costa
+2026-11-09 14:00:00,P002,vancomicina,1000,mg,2,IV,Dr. Costa
+2026-11-08 08:00:00,P003,metoprolol,50,mg,2,VO,Dr. Silva
+2026-11-08 08:00:00,P003,insulina_regular,10,UI,3,SC,Dr. Silva
+2026-11-09 08:00:00,P003,insulina_regular,60,UI,3,SC,Dr. Lima

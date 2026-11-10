@@ -1,0 +1,67 @@
+{
+  "patient_id": "P001",
+  "file": "/home/claude/tech-challenge-fase4/data/audio/consulta_P001.wav",
+  "features": {
+    "duration_s": 14.66,
+    "speech_time_s": 11.55,
+    "speech_rate_sps": 4.516,
+    "articulation_rate_sps": 5.455,
+    "pause_ratio": 0.172,
+    "long_pauses": 3,
+    "f0_mean_hz": 97.031,
+    "f0_std_st": 1.399,
+    "jitter_pct": 0.347,
+    "shimmer_pct": 13.201,
+    "hnr_db": 3.413,
+    "hf_energy_ratio": 0.16,
+    "breath_events_per_min": 0.0
+  },
+  "transcript": {
+    "text": "Bom dia, doutor. Estou me sentindo bem melhor hoje. Dormi bem a noite toda e a dor da cirurgia diminuiu bastante. Consegui caminhar pelo corredor com a enfermeira e já estou comendo normalmente.",
+    "engine": "transcricao-referencia (offline)",
+    "language": "pt-BR",
+    "segments": []
+  },
+  "insights": {
+    "engine": "lexico-offline",
+    "sentiment": "positive",
+    "sentiment_scores": {
+      "positive": 0.75,
+      "negative": 0.12,
+      "neutral": 0.12
+    },
+    "key_phrases": [
+      "dor",
+      "cirurgia"
+    ],
+    "health_entities": [
+      {
+        "text": "dor",
+        "category": "SymptomOrSign",
+        "negated": false
+      },
+      {
+        "text": "cirurgia",
+        "category": "BodyStructure",
+        "negated": false
+      }
+    ],
+    "critical_terms": []
+  },
+  "marker_flags": {
+    "fadiga": {
+      "fala_lenta": 0.0,
+      "pausas_excessivas": 0.0
+    },
+    "disartria": {
+      "jitter_elevado": 0.0,
+      "shimmer_elevado": 0.0,
+      "hnr_baixo": 0.0,
+      "articulacao_imprecisa": 0.0
+    },
+    "respiratorio": {
+      "respiracao_audivel": 0.0
+    }
+  },
+  "findings": []
+}

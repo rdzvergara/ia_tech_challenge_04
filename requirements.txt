@@ -1,0 +1,29 @@
+# Núcleo
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.4
+pyyaml>=6.0
+python-dotenv>=1.0
+jinja2>=3.1
+matplotlib>=3.8
+requests>=2.31
+
+# Vídeo
+opencv-python>=4.9
+ultralytics>=8.1          # YOLOv8 (detecção) e YOLOv8-pose (keypoints COCO-17)
+
+# Áudio
+librosa>=0.10
+soundfile>=0.12
+
+# Azure Cognitive Services
+azure-cognitiveservices-speech>=1.35   # Speech to Text
+azure-ai-textanalytics>=5.3            # Language: sentimento, key phrases, Text Analytics for Health
+
+# Dashboard e testes
+streamlit>=1.32
+pytest>=8.0
+
+# Opcional (transcrição offline quando não há chave Azure):
+# faster-whisper>=1.0

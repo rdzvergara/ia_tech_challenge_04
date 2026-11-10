@@ -1,0 +1,82 @@
+{
+  "vitals": [
+    {
+      "patient_id": "P001",
+      "event": "artefato_sensor_spo2",
+      "minute": 600,
+      "should_alert": false
+    },
+    {
+      "patient_id": "P002",
+      "event": "deterioracao_septica",
+      "minute": 1680,
+      "should_alert": true
+    },
+    {
+      "patient_id": "P003",
+      "event": "crise_hipertensiva",
+      "minute": 1200,
+      "should_alert": true
+    },
+    {
+      "patient_id": "P003",
+      "event": "bradicardia",
+      "minute": 2400,
+      "should_alert": true
+    }
+  ],
+  "prescriptions": [
+    {
+      "patient_id": "P002",
+      "event": "dose_10x_enoxaparina",
+      "should_alert": true
+    },
+    {
+      "patient_id": "P002",
+      "event": "morfina_aumento_2.5x",
+      "should_alert": true
+    },
+    {
+      "patient_id": "P003",
+      "event": "insulina_acima_limite",
+      "should_alert": true
+    },
+    {
+      "patient_id": "P003",
+      "event": "suspensao_abrupta_betabloqueador",
+      "should_alert": true
+    }
+  ],
+  "mobility": [
+    {
+      "patient_id": "P002",
+      "event": "hipoatividade_letargia",
+      "minute": 1560,
+      "should_alert": true
+    },
+    {
+      "patient_id": "P002",
+      "event": "agitacao_noturna",
+      "minute": 2820,
+      "should_alert": true
+    },
+    {
+      "patient_id": "P003",
+      "event": "queda",
+      "minute": 2340,
+      "should_alert": true
+    }
+  ],
+  "video": [
+    {
+      "patient_id": "P001",
+      "event": "sessao_normal",
+      "should_alert": false
+    },
+    {
+      "patient_id": "P003",
+      "event": "rom_reduzida_esquerda+assimetria+compensacao_tronco+tremor+queda",
+      "should_alert": true
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+# Configuração central do MedMonitor (thresholds clínicos e parâmetros dos modelos)
+
+paths:
+  data_dir: data
+  output_dir: outputs
+  models_dir: models
+
+video:
+  pose_backend: yolov8      # yolov8 | openpose_json | openpose_caffe
+  pose_model: models/yolov8n-pose.pt
+  detector_model: models/yolov8n.pt
+  frame_stride: 1           # processa 1 a cada N frames
+  min_keypoint_conf: 0.3
+  physio:
+    # Faixa de referência do exercício (abdução de ombro), em graus
+    target_rom_deg: [150, 180]
+    max_asymmetry_deg: 20       # diferença máx. entre lados
+    max_trunk_lean_deg: 12      # compensação de tronco
+    tremor_band_hz: [3.0, 7.0]  # banda de tremor patológico
+    tremor_power_ratio: 0.25
+    fall_drop_ratio: 0.35       # queda: centro do quadril desce >35% da altura corporal
+    fall_window_s: 1.0
+  critical_objects: [knife, scissors]   # classes COCO tratadas como instrumentos/objetos de risco
+  critical_zones:                       # polígonos normalizados (0..1) — ex.: campo estéril / área restrita
+    - name: campo_esteril
+      polygon: [[0.35, 0.45], [0.65, 0.45], [0.65, 0.95], [0.35, 0.95]]
+
+audio:
+  sample_rate: 16000
+  # Limiares dos biomarcadores vocais. Calibrados na voz de referência (P001, fala normal) do conjunto
+  # sintético; em produção devem ser recalibrados por paciente (linha de base) ou por população.
+  fatigue:
+    min_speech_rate_sps: 3.2     # sílabas/s abaixo disso sugere lentificação
+    max_pause_ratio: 0.25        # fração do tempo em pausas
+  dysarthria:
+    max_jitter_pct: 0.45
+    max_shimmer_pct: 18.0
+    min_hnr_db: 2.0
+    min_hf_energy_ratio: 0.145   # perda de nitidez articulatória
+  respiratory:
+    max_breath_events_per_min: 6
+  critical_terms:
+    - falta de ar
+    - dor no peito
+    - desmaio
+    - tontura
+    - confusão
+    - fala enrolada
+    - não consigo respirar
+    - formigamento
+    - cansaço
+    - sangramento
+
+vitals:
+  sampling_minutes: 1
+  # Limites clínicos absolutos (alerta imediato)
+  hard_limits:
+    hr:   [40, 130]
+    sbp:  [85, 180]
+    spo2: [90, 101]
+    rr:   [8, 28]
+    temp: [35.0, 39.0]
+  zscore_window: 60          # amostras para estatística robusta (mediana/MAD)
+  zscore_threshold: 4.0
+  persistence: 3             # amostras consecutivas para confirmar anomalia
+  cooldown_minutes: 30
+  isolation_forest:
+    contamination: 0.01
+    baseline_hours: 6
+  cusum:                     # sobre z = (x - base) / max(DP_base, DP_mínimo_clínico)
+    k: 1.0                   # folga: ignora desvios < 1 DP
+    h: 60.0                  # dispara após ~1 h acumulando 1 DP acima da folga
+
+prescriptions:
+  max_dose_change_ratio: 2.0    # aumento >2x entre prescrições consecutivas
+  # Doses diárias máximas de referência (mg/dia) — uso didático
+  max_daily_dose_mg:
+    enoxaparina: 200
+    dipirona: 4000
+    morfina: 120
+    furosemida: 600
+    vancomicina: 4000
+    insulina_regular: 150
+    metoprolol: 400
+    paracetamol: 4000
+  high_alert_drugs: [enoxaparina, morfina, insulina_regular, heparina, potassio]
+
+mobility:
+  window_hours: 4
+  min_activity_day: 0.15        # índice de atividade médio esperado durante o dia
+  night_hours: [23, 6]
+  night_bed_exit_threshold: 3   # saídas do leito à noite em uma janela
+
+fusion:
+  # Pesos da fusão tardia (late fusion) por modalidade
+  weights:
+    vitals: 0.40
+    audio: 0.20
+    video: 0.15
+    prescriptions: 0.15
+    mobility: 0.10
+  escalation:
+    critical: 0.75
+    high: 0.50
+    medium: 0.30
+  corroboration_bonus: 0.10     # bônus quando 2+ modalidades independentes concordam
+
+alerts:
+  channels: [console, jsonl, webhook]
+  jsonl_path: outputs/alerts.jsonl
